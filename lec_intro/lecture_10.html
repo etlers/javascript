@@ -1,0 +1,47 @@
+<!-- 
+    객체
+        key & value 형태
+        배열과 달리 인덱스에 문자열을 사용할 수 있다. 파이썬의 딕셔너리에 해당
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <script type="text/javascript">
+            // 'var grades = new Object() { ... }'와 동일
+            var grades = {
+                "etlers": 950,
+                "CHOIS": 850,
+                "jychoi": 750
+            }
+            // 추가
+            grades["YoonSeo"] = 650
+
+            console.log(grades)
+            console.log(grades.CHOIS)
+            console.log(grades["etlers"])
+            // 배열로 추출
+            for (key in grades) {
+                // 웹페이지 리스트 생성
+                document.write("<ul><li>" + key + " [" + grades[key] + "]</li></ul>")
+                        
+            }
+
+            var grades = {
+                'list': {'주용': 10, "수진": 20, "원민": 30},
+                'show': function() {
+                    console.log('hello etlers')
+                    // 'this'는 함수가 속해있는 객체(grades)를 가리키는 변수
+                    //console.log(this.list)
+                    for (name in this.list) {
+                        console.log(name, this.list[name])
+                    }
+                }
+            }
+            console.log(grades['list']['주용'])
+            //grades['show']()
+            grades.show()
+        </script>
+    </body>

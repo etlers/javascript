@@ -1,0 +1,51 @@
+<!-- 
+    배열
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function get_members() {
+                return ["etlers", "jychoi"]
+            }
+
+            // 배열 요소 출력
+            function print_array(array_name) {
+                for (idx = 0; idx < array_name.length; idx ++) {
+                    console.log(array_name[idx])
+                    // console.log(member[idx].toUpperCase())
+                    // console.log(member[idx].toLowerCase())                    
+                }            
+                console.log("###########################")
+            }
+
+            var member = get_members()
+            // 배열 요소 추가
+            member.push("Kkomgirak")
+            // 여러개의 배열 요소 추가
+            member = member.concat(["YoonSeo", "WonMin"])
+            // 맨 앞으로 추가
+            member.unshift("Miro")
+            // 원하는 위치로 추가, '0' 옵션은 앞으로 추가
+            member.splice(1, 0, "CHOIS", "jason")
+            // '1'은 삭제 후 추가를 한다는 의미
+            member.splice(1, 1, "Apple", "Galaxy")
+            // 배열 요소 출력
+            print_array(member)
+            // 첫번째 요소를 제거
+            member.shift()
+            // 배열 요소 출력
+            print_array(member)
+            // 마지막 요소를 제거
+            member.pop()
+            // 배열 요소 출력
+            print_array(member)
+            // 정렬
+            member = member.sort()
+            // 배열 요소 출력
+            print_array(member)
+        </script>
+    </body>
