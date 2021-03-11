@@ -1,0 +1,32 @@
+<!-- 
+    함수
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function numbering(num) {
+                for (var i = 0; i < num; i++) {
+                    console.log(i)
+                }
+
+                return num * 100
+            }
+            console.log(numbering(5))
+            // 함수 구조를 변수에 대입
+            num_add = function(num1, num2) {
+                return num1 + num2
+            }
+            console.log(num_add(10, 20));
+            // 익명함수. 반드시 ';'으로 끊어줘야 한다.
+            (function(num1, num2) {
+                for (var i = 0; i < 5; i++) {
+                    document.write(i)
+                }
+                console.log(num1 + num2)
+            })(30, 20);
+        </script>
+    </body>
