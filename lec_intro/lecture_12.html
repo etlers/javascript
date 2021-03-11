@@ -1,0 +1,24 @@
+<!-- 
+    라이브러리. jQuery($로 시작해 $로 끝난다.)
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <script src="../jquery/jquery.js"></script>
+    </head>
+    <body>
+        <ul id="list">
+            <li>empty</li>
+            <li>empty</li>
+            <li>empty</li>
+            <li>empty</li>
+        </ul>
+        <input type="button" value="execute" id="exec_btn"/>
+        <script type="text/javascript">
+            $('#exec_btn').click(function() {
+                $('#list li').text('etlers')
+            })            
+        </script>
+    </body>
+</html>
