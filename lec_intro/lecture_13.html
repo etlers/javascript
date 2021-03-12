@@ -1,0 +1,64 @@
+<!-- 
+    정규표현식 regular expression
+        리터럴
+            var pattern = /a/
+        객체 생성자
+            var pattern = new RegExp('a')
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>        
+    </head>
+    <body>
+        <script type="text/javascript">
+            // '.' - 하나의 문자를 의미. 어떠한 문자도 올 수 있다
+            var pattern = /a./
+            console.log(pattern.exec('abcdef'))
+            console.log(pattern.exec('bcdefg'))
+
+            var pattern = new RegExp('a')
+            console.log(pattern.exec('abcdef'))
+            console.log(pattern.exec('bcdefg'))
+
+            // 첫번째 인자에 패턴이 존재하는지 여부
+            var pattern = /a/
+            console.log(pattern.test('bcde'))
+            // 'exec'와 동일
+            var pattern = /a/
+            console.log('abcdef'.match(pattern))
+            // replace
+            console.log('abcdef'.replace(pattern, 'A'))
+            // i - 대소문자를 구분하지 않는다
+            var xi = /a/
+            console.log("Abcde".match(xi))
+            var oi = /a/i
+            console.log("Abcde".match(oi))
+            // g - 모든 결과를 리턴한다.
+            var xg = /a/
+            console.log("abcdea".match(xg))
+            var og = /a/g
+            console.log("abcdea".match(og))
+            var ig = /a/ig
+            console.log("AabcdeAa".match(ig))
+            // 캡쳐. ex) /(\w+)\s(\w+)/
+            // 괄호는 그룹을 의미 '()'
+            // '\w' - 문자를 의미. 'A ~ Z, a ~ z, 0 ~ 9'가 해당
+            // '+' 수량자. 앞의 문자가 하나 이상인 경우 유용해 짐
+            // '\s' - space, 공백을 의미
+            // 즉, '문자-공백-문자' 형태를 의미
+            var pattern = /(\w+)\s(\w+)/
+            var str = "coding everybody"
+            // '$' - 그룹을 의미
+            var result = str.replace(pattern, "$2, $1")
+            console.log(result)
+            // 치환
+            var url_pattern = /\b(?:https?):\/\/[a-z0-9-+&@#\/%?=~_|!:,.;]*/gim;
+            var content = '생활코딩 : http://opentutorials.org/course/1 입니다. 네이버 : http://naver.com 입니다. '
+            var result = content.replace(url_pattern, function(url) {
+                return '<a href="' + url + '">' + url + '</a>'
+            })
+            console.log(result)
+        </script>
+    </body>
+</html>
